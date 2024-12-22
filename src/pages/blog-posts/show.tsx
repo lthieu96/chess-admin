@@ -26,12 +26,6 @@ export const BlogPostShow = () => {
       <TextField value={record?.title} />
       <Title level={5}>{"Content"}</Title>
       <MarkdownField value={record?.content} />
-      <Title level={5}>{"Category"}</Title>
-      <TextField
-        value={
-          categoryIsLoading ? <>Loading...</> : <>{categoryData?.data?.title}</>
-        }
-      />
       <Title level={5}>{"Status"}</Title>
       <TextField value={record?.status} />
       <Title level={5}>{"CreatedAt"}</Title>

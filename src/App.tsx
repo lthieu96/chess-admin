@@ -21,6 +21,7 @@ import { ColorModeContextProvider } from "./contexts/color-mode";
 import { BlogPostCreate, BlogPostEdit, BlogPostList, BlogPostShow } from "./pages/blog-posts";
 import { ForgotPassword } from "./pages/forgotPassword";
 import { Login } from "./pages/login";
+import { UserList } from "./pages/users";
 
 function App() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -47,6 +48,16 @@ function App() {
                       canDelete: true,
                     },
                   },
+                  {
+                    name: "users",
+                    list: "/users",
+                    // create: "/users/create",
+                    // edit: "/users/edit/:id",
+                    // show: "/users/show/:id",
+                    // meta: {
+                    //   canDelete: true,
+                    // },
+                  },
                 ]}
                 options={{
                   syncWithLocation: true,
@@ -72,6 +83,12 @@ function App() {
                       <Route path='create' element={<BlogPostCreate />} />
                       <Route path='edit/:id' element={<BlogPostEdit />} />
                       <Route path='show/:id' element={<BlogPostShow />} />
+                    </Route>
+                    <Route path='/users'>
+                      <Route index element={<UserList />} />
+                      {/* <Route path='create' element={<UserCreate />} />
+                      <Route path='edit/:id' element={<UserEdit />} />
+                      <Route path='show/:id' element={<UserShow />} /> */}
                     </Route>
                     <Route path='*' element={<ErrorComponent />} />
                   </Route>
