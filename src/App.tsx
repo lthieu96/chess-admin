@@ -39,7 +39,7 @@ function App() {
                 routerProvider={routerBindings}
                 resources={[
                   {
-                    name: "blog_posts",
+                    name: "blog-posts",
                     list: "/blog-posts",
                     create: "/blog-posts/create",
                     edit: "/blog-posts/edit/:id",
@@ -77,7 +77,7 @@ function App() {
                       </Authenticated>
                     }
                   >
-                    <Route index element={<NavigateToResource resource='blog_posts' />} />
+                    <Route index element={<NavigateToResource resource='blog-posts' />} />
                     <Route path='/blog-posts'>
                       <Route index element={<BlogPostList />} />
                       <Route path='create' element={<BlogPostCreate />} />

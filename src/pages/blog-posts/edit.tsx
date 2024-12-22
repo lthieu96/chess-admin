@@ -1,23 +1,14 @@
-import { Edit, useForm, useSelect } from "@refinedev/antd";
-import MDEditor from "@uiw/react-md-editor";
+import { Edit, useForm } from "@refinedev/antd";
 import { Form, Input, Select } from "antd";
+import { markdownStyles } from "./styles";
+import MDEditor from "@uiw/react-md-editor";
 
 export const BlogPostEdit = () => {
   const { formProps, saveButtonProps, queryResult, formLoading } = useForm({});
 
-  const blogPostsData = queryResult?.data?.data;
-
-  const { selectProps: categorySelectProps } = useSelect({
-    resource: "categories",
-    defaultValue: blogPostsData?.category,
-    queryOptions: {
-      enabled: !!blogPostsData?.category,
-    },
-  });
-
   return (
     <Edit saveButtonProps={saveButtonProps} isLoading={formLoading}>
-      <Form {...formProps} layout="vertical">
+      <Form {...formProps} layout='vertical'>
         <Form.Item
           label={"Title"}
           name={["title"]}
@@ -31,26 +22,14 @@ export const BlogPostEdit = () => {
         </Form.Item>
         <Form.Item
           label={"Content"}
-          name="content"
+          name='content'
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <MDEditor data-color-mode="light" />
-        </Form.Item>
-        <Form.Item
-          label={"Category"}
-          name={["category", "id"]}
-          initialValue={formProps?.initialValues?.category?.id}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Select {...categorySelectProps} />
+          <MDEditor data-color-mode='light' height={400} />
         </Form.Item>
         <Form.Item
           label={"Status"}
@@ -67,7 +46,6 @@ export const BlogPostEdit = () => {
             options={[
               { value: "draft", label: "Draft" },
               { value: "published", label: "Published" },
-              { value: "rejected", label: "Rejected" },
             ]}
             style={{ width: 120 }}
           />
