@@ -22,6 +22,7 @@ import { BlogPostCreate, BlogPostEdit, BlogPostList, BlogPostShow } from "./page
 import { ForgotPassword } from "./pages/forgotPassword";
 import { Login } from "./pages/login";
 import { UserList } from "./pages/users";
+import { UserEdit } from "./pages/users/edit";
 
 function App() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -52,7 +53,7 @@ function App() {
                     name: "users",
                     list: "/users",
                     // create: "/users/create",
-                    // edit: "/users/edit/:id",
+                    edit: "/users/edit/:id",
                     // show: "/users/show/:id",
                     // meta: {
                     //   canDelete: true,
@@ -86,8 +87,8 @@ function App() {
                     </Route>
                     <Route path='/users'>
                       <Route index element={<UserList />} />
-                      {/* <Route path='create' element={<UserCreate />} />
                       <Route path='edit/:id' element={<UserEdit />} />
+                      {/* <Route path='create' element={<UserCreate />} />
                       <Route path='show/:id' element={<UserShow />} /> */}
                     </Route>
                     <Route path='*' element={<ErrorComponent />} />

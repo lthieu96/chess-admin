@@ -154,7 +154,7 @@ export const UserList = () => {
           align='right'
           render={(_, record: BaseRecord) => (
             <Space>
-              {/* <EditButton hideText size='small' recordItemId={record.id} /> */}
+              <EditButton hideText size='small' recordItemId={record.id} />
               <Popconfirm
                 title='Are you sure?'
                 onConfirm={() => {

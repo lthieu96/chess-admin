@@ -4,6 +4,7 @@ import { Form, Input, Select, Upload, message, Button, Image } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { uploadThumbnail, deleteThumbnail } from "../../lib/supabase";
 import { useState } from "react";
+import ImageUploader from "../../components/images-upload";
 
 export const BlogPostCreate = () => {
   const { formProps, saveButtonProps } = useForm({});
@@ -76,6 +77,9 @@ export const BlogPostCreate = () => {
           ]}
         >
           <MDEditor data-color-mode='light' height={400} />
+        </Form.Item>
+        <Form.Item label='Images'>
+          <ImageUploader />
         </Form.Item>
         <Form.Item
           label={"Status"}

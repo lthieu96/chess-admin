@@ -4,6 +4,7 @@ import MDEditor from "@uiw/react-md-editor";
 import { uploadThumbnail, deleteThumbnail } from "../../lib/supabase";
 import { UploadOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import ImageUploader from "../../components/images-upload";
 
 export const BlogPostEdit = () => {
   const { formProps, saveButtonProps, queryResult, formLoading } = useForm({});
@@ -60,6 +61,9 @@ export const BlogPostEdit = () => {
         </Form.Item>
         <Form.Item label='Content' name='content' rules={[{ required: true }]}>
           <MDEditor data-color-mode='light' height={400} />
+        </Form.Item>
+        <Form.Item label='Images'>
+          <ImageUploader />
         </Form.Item>
         <Form.Item label='Status' name={["status"]} initialValue='draft' rules={[{ required: true }]}>
           <Select
