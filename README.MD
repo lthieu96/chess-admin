@@ -1,49 +1,56 @@
-# chess-admin
+## Prerequisites
 
-<div align="center" style="margin: 30px;">
-    <a href="https://refine.dev">
-    <img alt="refine logo" src="https://refine.ams3.cdn.digitaloceanspaces.com/readme/refine-readme-banner.png">
-    </a>
-</div>
-<br/>
+- Node.js (v18 or higher)
+- npm or yarn package manager
+- Git
 
-This [Refine](https://github.com/refinedev/refine) project was generated with [create refine-app](https://github.com/refinedev/refine/tree/master/packages/create-refine-app).
+## Installation
 
-## Getting Started
+1. Clone the repository
 
-A React Framework for building internal tools, admin panels, dashboards & B2B apps with unmatched flexibility ✨
+   ```bash
+   git clone https://github.com/lthieu96/chess-admin.git
+   cd chess-admin
+   ```
 
-Refine's hooks and components simplifies the development process and eliminates the repetitive tasks by providing industry-standard solutions for crucial aspects of a project, including authentication, access control, routing, networking, state management, and i18n.
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Environment Setup
+
+- Copy the .env.example file to create a new .env file
+- Update the following environment variables in .env:
+
+  ```
+  VITE_API_URL: Your API URL (default: http://localhost:8080)
+  VITE_SUPABASE_URL: Your Supabase project URL
+  VITE_SUPABASE_ANON_KEY: Your Supabase anonymous key
+  ```
+
+4. Start the development server
+   ```bash
+   npm run dev
+    # or
+   yarn dev
+   ```
 
 ## Available Scripts
 
-### Running the development server.
+- `npm run dev` - Starts the development server
+- `npm run build` - Creates a production build
+- `npm start` - Runs the production build
+- `npm run refine` - Runs Refine CLI commands
 
-```bash
-    npm run dev
-```
+## Tech Stack
 
-### Building for production.
-
-```bash
-    npm run build
-```
-
-### Running the production server.
-
-```bash
-    npm run start
-```
-
-## Learn More
-
-To learn more about **Refine**, please check out the [Documentation](https://refine.dev/docs)
-
-- **NestJS Data Provider** [Docs](https://refine.dev/docs/core/providers/data-provider/#overview)
-- **Ant Design** [Docs](https://refine.dev/docs/ui-frameworks/antd/tutorial/)
-- **Custom Auth Provider** [Docs](https://refine.dev/docs/core/providers/auth-provider/)
-- **React Router** [Docs](https://refine.dev/docs/core/providers/router-provider/)
-
-## License
-
-MIT
+- React 18
+- TypeScript
+- Refine
+- Ant Design
+- Supabase
+- Vite
