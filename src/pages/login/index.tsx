@@ -5,7 +5,7 @@ export const Login = () => {
     <AuthPage
       type='login'
       formProps={{
-        initialValues: { email: "admin@example.com", password: "admin" },
+        initialValues: { email: "admin@example.com", password: "password123" },
       }}
       registerLink={false}
       rememberMe={false}
