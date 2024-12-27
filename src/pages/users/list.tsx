@@ -135,7 +135,7 @@ export const UserList = () => {
     <List>
       <Table {...tableProps} rowKey='id' pagination={false}>
         <Table.Column dataIndex='id' title={"ID"} />
-        <Table.Column dataIndex='username' title={"Username"} {...getColumnSearchProps("username")} />
+        <Table.Column dataIndex='username' title={"Name"} {...getColumnSearchProps("username")} />
         <Table.Column dataIndex='email' title={"Email"} {...getColumnSearchProps("email")} />
         <Table.Column
           dataIndex='role'
